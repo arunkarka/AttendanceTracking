@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.ContentResolver;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -24,6 +25,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -143,9 +145,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            //showProgress(true);
+            //mAuthTask = new UserLoginTask(email, password);
+            //mAuthTask.execute((Void) null);
+            launchSecondActivity();
         }
     }
 
@@ -277,6 +280,19 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                         android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
 
         mEmailView.setAdapter(adapter);
+    }
+
+    private void launchSecondActivity() {
+        RadioButton teacherLoginRadioButton = (RadioButton)findViewById(R.id.radio_teacher);
+
+        if (teacherLoginRadioButton.isChecked()) {
+            Intent launchSecondAct = new Intent(this, TeacherActivity.class);
+            startActivity(launchSecondAct);
+        } else {
+            Intent launchSecondAct = new Intent(this, StudentActivity.class);
+            startActivity(launchSecondAct);
+        }
+
     }
 
     /**
