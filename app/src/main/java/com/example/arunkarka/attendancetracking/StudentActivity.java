@@ -5,13 +5,23 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 
 public class StudentActivity extends ActionBarActivity {
-
+    private ArrayList<String> weekAttendanceList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        weekAttendanceList.add("Present");
+        weekAttendanceList.add("Present");
+        weekAttendanceList.add("Present");
+        weekAttendanceList.add("Present");
+        weekAttendanceList.add("Present");
+        weekAttendanceList.add("Absent");
+        weekAttendanceList.add("Absent");
         setContentView(R.layout.activity_student);
+
     }
 
     @Override
