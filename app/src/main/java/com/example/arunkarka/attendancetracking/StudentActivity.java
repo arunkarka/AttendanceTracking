@@ -57,7 +57,7 @@ public class StudentActivity extends ListActivity {
 
     private void createOneWeekDates() {
         oneWeekDates = new String[7];
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
         Calendar cal = Calendar.getInstance();
         for (int i = 0; i<7; i++) {
             oneWeekDates[i] = dateFormat.format(cal.getTime());

@@ -34,11 +34,11 @@ public class MySimpleArrayAdapter extends ArrayAdapter<String> {
         dateLabel.setText(weekDates[position]);
         attendance_label.setText(oneWeekAttendanceList[position]);
         // change the icon for Windows and iPhone
-        String s = weekDates[position];
-        if (s.startsWith("iPhone")) {
-            imageView.setImageResource(R.drawable.ic_cast_dark);
+        String s = oneWeekAttendanceList[position];
+        if (s.equals("Absent")) {
+            imageView.setImageResource(R.drawable.ic_absent);
         } else {
-            imageView.setImageResource(R.drawable.ic_cast_light);
+            imageView.setImageResource(R.drawable.ic_present);
         }
 
         return rowView;
