@@ -28,9 +28,11 @@ public class MySimpleArrayAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.rowlayout, parent, false);
-        TextView textView = (TextView) rowView.findViewById(R.id.label);
+        TextView dateLabel = (TextView) rowView.findViewById(R.id.date_label);
+        TextView attendance_label = (TextView) rowView.findViewById(R.id.attendance_label);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-        textView.setText(weekDates[position]);
+        dateLabel.setText(weekDates[position]);
+        attendance_label.setText(oneWeekAttendanceList[position]);
         // change the icon for Windows and iPhone
         String s = weekDates[position];
         if (s.startsWith("iPhone")) {
